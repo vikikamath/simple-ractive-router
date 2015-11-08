@@ -1,0 +1,38 @@
+<div>
+
+	<div id="parent">
+
+		{{message}}
+
+		<Child/>
+
+	</div>
+
+</div>
+
+<script>
+
+	var Child = require( 'rvc!components/child' );
+
+	component.exports = {
+
+		el: '#main',
+
+		data: {
+
+			'message' 	: 'Parent Here'
+
+		},
+
+		append: true,
+
+		components: {
+
+			'Child'		: Child
+
+		}
+
+	};
+
+</script>
+

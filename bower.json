@@ -1,0 +1,34 @@
+{
+  "name": "ractive-router",
+  "main": "index.js",
+  "version": "0.0.1",
+  "authors": [
+    "vikikikamath <vikikikamath@gmail.com>"
+  ],
+  "description": "'Minimal Routing for Ractive.js'",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "ractive",
+    "router"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ractive": "~0.7.3",
+    "requirejs": "~2.1.20"
+  },
+  "devDependencies": {
+    "mocha": "~2.3.3",
+    "chai": "~3.4.0",
+    "rvc": "~0.4.0"
+  }
+}
