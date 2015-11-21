@@ -6,6 +6,8 @@ define( [ 'require', 'ractive' ], function ( require, Ractive ) {
 
 	'use strict';
 
+	var componentIDPattern = new RegExp( /^([a-fA-F0-9]){8}\-(([a-fA-F0-9]){4}\-){3}([a-fA-F0-9]){12}$/ );
+
 	var instance;
 
 	//http://stackoverflow.com/a/2117523- rfc4122 version 4 compliant solution
@@ -20,14 +22,15 @@ define( [ 'require', 'ractive' ], function ( require, Ractive ) {
 	    } );
 	};
 
-	var getHash = function ( e ) {
+	var hashFromHashChangeEvent = function ( e ) {
 
 		return e.newURL.split( '#' )[ 1 ];
 	}
 
 	var simpleHashChangeEventHandler = function ( e ) {
 
-		this.navigate( getHash( e ), true, e, false );
+		this.navigate( hashFromHashChangeEvent( e ), e, false );
+
 	}
 
 	var Router = function ( eventName ) {
@@ -58,23 +61,6 @@ define( [ 'require', 'ractive' ], function ( require, Ractive ) {
 
 	       	var uuid = nextUUID( );
 
-	        var origOnInit = Component.prototype.oninit;
-
-	        Component.prototype.oninit = function( ) {
-
-	            this.on( 'navigate', function( e, preventDefault ){
-
-	                self.navigate(	e.node.hash, preventDefault, e );
-
-	            } );
-
-	            if ( typeof origOnInit === 'function' ) {
-
-	                origOnInit( );
-
-	            }
-	        };
-
 
 	       	// register top level components globally
 	       	Ractive.components[ uuid ] = Component;
@@ -90,7 +76,7 @@ define( [ 'require', 'ractive' ], function ( require, Ractive ) {
 	    });
 	};
 
-	Router.prototype.navigate = function ( hash, updateAddressbar, e, preventDefault ) {
+	Router.prototype.navigate = function ( hash, e, preventDefault ) {
 
 		if ( hash && this._routes[ hash ] ){
 
@@ -110,8 +96,6 @@ define( [ 'require', 'ractive' ], function ( require, Ractive ) {
 	};
 
 	Router.prototype.destroy = function ( ) {
-
-		var componentIDPattern = new RegExp( /^([a-fA-F0-9]){8}\-(([a-fA-F0-9]){4}\-){3}([a-fA-F0-9]){12}$/ );
 
 		var count = 0;
 

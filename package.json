@@ -1,7 +1,7 @@
 {
-  "name": "ractive-router",
+  "name": "simple-ractive-router",
   "version": "0.0.1",
-  "description": "Minimal Routing for Ractive.js",
+  "description": "A thin client side routing layer on top of Ractive.js",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -11,18 +11,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/vikikamath/ractive-router"
+    "url": "git://github.com/vikikamath/simple-ractive-router"
   },
   "keywords": [
     "Ractivejs",
     "router"
   ],
-  "author": "vikikamath",
+  "author": "vikikamath<vikikamath@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vikikamath/ractive-router/issues"
+    "url": "https://github.com/vikikamath/simple-ractive-router/issues"
   },
-  "homepage": "https://github.com/vikikamath/ractive-router",
+  "homepage": "https://github.com/vikikamath/simple-ractive-router",
   "devDependencies": {
     "chai": "^3.4.1",
     "mocha": "^2.3.3",

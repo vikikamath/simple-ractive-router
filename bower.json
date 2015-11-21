@@ -1,11 +1,11 @@
 {
-  "name": "ractive-router",
+  "name": "simple-ractive-router",
   "main": "index.js",
   "version": "0.0.1",
   "authors": [
     "vikikikamath <vikikikamath@gmail.com>"
   ],
-  "description": "'Minimal Routing for Ractive.js'",
+  "description": "A thin client side routing layer on top of Ractive.js",
   "moduleType": [
     "amd"
   ],

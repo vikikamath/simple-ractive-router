@@ -113,25 +113,6 @@ define( function( require ) {
 
 			} );
 
-			describe( 'Updating URL hash in address bar', function ( ) {
-
-				it(	'should NOT update URL hash in addressbar if not asked', function ( ) {
-
-					expect( location.hash.indexOf( route ) ).to.equal( -1 );
-
-				} );
-
-				xit( 'should update URL hash in addressbar if asked', function ( ) {
-
-					router.navigate( route, true );
-
-					expect( location.hash.indexOf( route ) ).to.not.equal( -1 );
-
-
-				} );
-
-			} );
-
 
 		} );
 
@@ -173,13 +154,11 @@ define( function( require ) {
 			} );
 
 
-			it( 'should navigate on location.hash change for a registered route', function (done ) {
+			it( 'should listen to hashchange for a registered route', function (done ) {
 
 				location.hash = route;
 
 				setTimeout( function( ) {
-
-					expect( location.hash.indexOf( route ) ).to.not.equal( -1 );
 
 					expect( document.querySelector( "div#alternate" ).textContent ).to.equal( message );
 
@@ -275,14 +254,11 @@ define( function( require ) {
 
 						router.navigate( '#/peers' );
 
+						expect( document.querySelector( "header" ) ).to.be.defined;
+
 						expect( document.querySelector( "footer" ) ).to.be.defined;
 
 					} );
-
-				} );
-
-				describe( 'Uninitialized Components', function ( ) {
-
 
 				} );
 

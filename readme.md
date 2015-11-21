@@ -1,3 +1,3 @@
-#Todo
+# A Simple Ractive Router
 
-- use rvc loader to load component instances
+- A thin client side routing layer on top of [Ractive.js](http://www.ractivejs.org)
